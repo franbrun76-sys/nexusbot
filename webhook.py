@@ -2,11 +2,11 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-@app.route("/", methods=["POST"])
+@app.route("/", methods=["GET", "POST"])
 def home():
     return jsonify({"status": 200})
 
-@app.route("/pix", methods=["POST"])
+@app.route("/pix", methods=["GET", "POST"])
 def pix():
     print(request.json)
     return jsonify({"ok": True})
